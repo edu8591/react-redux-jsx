@@ -8,7 +8,9 @@ import ReactDOM from 'react-dom';
 //import(we want to get code from some other file or dependency) React(the variable we want to assign this import to) from( we are aabout to specify the name of the library or file we are importing from) 'react'(the name of the dependency or path to the file we are importing)
 
 
-
+function getFunctionText() {
+    return 'Click on me!'
+}
 
 //Step 2) Create a react component
 //a react component is a function or a class
@@ -17,7 +19,20 @@ import ReactDOM from 'react-dom';
 
 const App = () => { //arrow function instead of the function keyword
     //classes and component always start with capital leters
-    return <div>Hi there!</div>;
+
+    const buttonText = 'click me!'; //you can reference js variables inside of jsx by setting them between {}
+
+    return (
+    <div>
+        <label className="label" htmlFor="name">
+            Enter Name:
+        </label> {/*in jsx whne creating a class it should be callesd 'className' not just 'class' */}
+        <input id="name" type="text"/>
+        <button style={{backgroundColor: 'blue', color: 'white', fontSize: '20px'}}>
+            {buttonText}
+        </button>
+    </div>
+    );
 };
 //this is a function component
 
